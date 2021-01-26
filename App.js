@@ -4,30 +4,19 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function App() {
 
-  const[name, setName] = useState('cesar');
-  const[age, setAge] = useState( '25' );
-
-  const clickHandler= () => {
-    setName('lenin');
-    setPerson({ name: 'lexi' , age : 55});
-  }
+  const [people, setPeople] = useState([
+    {name: 'shaun', key: '1'},
+    {name: 'cesar', key: '2'},
+    {name: 'lenin', key: '3'},
+    {name: 'morales', key: '4'},
+    {name: 'nayeli', key: '5'},
+    {name: 'daniel', key: '6'},
+    {name: 'alexis', key: '7'},
+  ])
 
   return (
     <View style={styles.container}>
-      <Text> Enter name:</Text>
-      <TextInput 
-      style={styles.input}
-      placeholder= 'e.g John Doe'
-      onChangeText= {(val) => setName(val)}
-      />
-      <Text> Enter age:</Text>
-      <TextInput 
-      keyboardType= 'numeric'
-      style={styles.input}
-      placeholder= 'e.g 25'
-      onChangeText= {(val) => setAge(val)}
-      />
-      <Text> name: {name}, age: {age}</Text>
+
     </View>
   );
 }
@@ -39,11 +28,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  input:{
-    borderWidth: 1,
-    borderColor: '#777',
-    padding: 8, 
-    margin: 10,
-     width: 200,
-  }
+
 });
